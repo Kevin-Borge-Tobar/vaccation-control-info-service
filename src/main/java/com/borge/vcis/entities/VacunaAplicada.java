@@ -31,5 +31,4 @@ public class VacunaAplicada {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "informacion_infante_id", nullable = false)
     private InformacionInfante informacionInfante;
-
 }
