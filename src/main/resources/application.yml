@@ -4,14 +4,11 @@ spring:
     username: root
     password: developer
     driver-class-name: com.mysql.cj.jdbc.Driver
-
   jpa:
     hibernate:
-      ddl-auto: none # O usa validate / none / create / create-drop según tu necesidad
+      ddl-auto: none
     show-sql: true
     database-platform: org.hibernate.dialect.MySQL8Dialect
-
-  # Opcional: formato legible para logs SQL
-  properties:
-    hibernate:
-      format_sql: true
+    properties:
+      hibernate:
+        format_sql: true
