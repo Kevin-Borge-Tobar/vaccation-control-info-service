@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("/api/informacion-centro")
+@RequestMapping("/info-vacunacion/informacion-centro")
 public class InformacionCentroController  extends  ControllerGeneric<InformacionCentroDto, InformacionCentro, Integer> {
 
     public InformacionCentroController(InformacionCentroService informacionCentroService) {

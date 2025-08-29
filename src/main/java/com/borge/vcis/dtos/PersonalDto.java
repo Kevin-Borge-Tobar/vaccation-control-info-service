@@ -1,19 +1,20 @@
 package com.borge.vcis.dtos;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.ToString;
+import com.borge.vcis.entities.Personal;
+import lombok.*;
 
 import java.io.Serializable;
 import java.time.LocalDate;
 
 /**
- * DTO for {@link com.borge.vcis.entities.Pesonal}
+ * DTO for {@link Personal}
  */
 @AllArgsConstructor
+@NoArgsConstructor(force = true)
+@Data
 @Getter
-@ToString
-public class PesonalDto implements Serializable {
+@Setter
+public class PersonalDto implements Serializable {
     private final Integer id;
     private final String nombre;
     private final CargoDto cargo;

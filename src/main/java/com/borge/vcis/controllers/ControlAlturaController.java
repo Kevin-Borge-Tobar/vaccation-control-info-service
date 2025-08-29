@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/control-altura")
+@RequestMapping("/info-vacunacion/control-altura")
 public class ControlAlturaController extends ControllerGeneric<ControlAlturaDto, ControlAltura, Integer> {
 
     public ControlAlturaController(ControlAlturaService service) {

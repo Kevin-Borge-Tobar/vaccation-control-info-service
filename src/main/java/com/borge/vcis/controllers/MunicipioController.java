@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/municipios")
+@RequestMapping("/info-vacunacion/municipios")
 public class MunicipioController extends  ControllerGeneric<MunicipioDto, Municipio, Integer> {
 
     public MunicipioController(MunicipioService municipioService) {

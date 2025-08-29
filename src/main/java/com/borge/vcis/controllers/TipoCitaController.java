@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/tipos-citas")
+@RequestMapping("/info-vacunacion/tipos-citas")
 public class TipoCitaController extends  ControllerGeneric<TipoCitaDto, TipoCita, Integer> {
 
     public TipoCitaController(TipoCitaService service) {

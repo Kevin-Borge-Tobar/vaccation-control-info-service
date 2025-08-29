@@ -10,26 +10,33 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "vacuna_aplicada")
 public class VacunaAplicada {
+
     @Id
     @Column(name = "id", nullable = false)
     private Integer id;
 
+    /** Catálogo (como ya lo tenías) */
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "Vacunas_id", nullable = false)
     private Vacuna vacunas;
 
+    /** Texto libre (mantener compatibilidad) ej.: "Dosis 1", "Refuerzo" */
     @Column(name = "dosis_aplicada", length = 45)
     private String dosisAplicada;
 
-    @Column(name = "`fecha_aplicacion`")
-    private LocalDate fechaAplicaciN;
+    @Column(name = "fecha_aplicacion", nullable = false)
+    private LocalDate fechaAplicacion;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "responsable_aplicacion", nullable = false)
-    private Pesonal responsableAplicacion;
+    private Personal responsableAplicacion;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "informacion_infante_id", nullable = false)
     private InformacionInfante informacionInfante;
 
+    /** NUEVO (opcional): vínculo a la regla aplicada (exacta dosis/edad) */
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "edad_aplicacion_id")
+    private EdadAplicacion edadAplicacion;
 }

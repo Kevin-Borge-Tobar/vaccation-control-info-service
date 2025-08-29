@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/responsables")
+@RequestMapping("/info-vacunacion/responsables")
 public class ResponsableController extends  ControllerGeneric<ResponsableDto, Responsable, Integer> {
     public ResponsableController(ResponsableService service) {
         super(service);

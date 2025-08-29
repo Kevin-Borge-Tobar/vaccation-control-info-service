@@ -3,15 +3,18 @@ package com.borge.vcis.entities;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.time.LocalDate;
 
 @Getter
 @Setter
 @Entity
+@ToString
 @Table(name = "cita")
 public class Cita {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Integer id;
 
@@ -29,6 +32,7 @@ public class Cita {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "informacion_infante_id", nullable = false)
+//    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private InformacionInfante informacionInfante;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

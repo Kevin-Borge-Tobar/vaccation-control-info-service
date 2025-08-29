@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/citas/control-altura")
+@RequestMapping("/info-vacunacion/citas/control-altura")
 public class CitaControlAlturaController  extends ControllerGeneric<CitaControlAlturaDto, CitaControlAltura, Integer >{
     protected CitaControlAlturaController(CitaControlAlturaService service) {
         super(service);

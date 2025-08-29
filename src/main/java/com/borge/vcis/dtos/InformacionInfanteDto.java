@@ -1,6 +1,6 @@
 package com.borge.vcis.dtos;
 
-import lombok.Value;
+import lombok.*;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -8,7 +8,11 @@ import java.time.LocalDate;
 /**
  * DTO for {@link com.borge.vcis.entities.InformacionInfante}
  */
-@Value
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class InformacionInfanteDto implements Serializable {
     Integer id;
     String cui;
@@ -18,4 +22,5 @@ public class InformacionInfanteDto implements Serializable {
     LocalDate fechaRegistro;
     String descripcion;
     SedeDto sede;
+    GeneroDto genero;
 }

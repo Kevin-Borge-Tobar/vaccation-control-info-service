@@ -27,6 +27,6 @@ public class ControlPeso {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "responsable_medicion", nullable = false)
-    private Pesonal responsableMedicion;
+    private Personal responsableMedicion;
 
 }

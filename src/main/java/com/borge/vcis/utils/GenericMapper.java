@@ -1,10 +1,12 @@
 package com.borge.vcis.utils;
 
+import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Slf4j
 @Component
 public class GenericMapper {
 
@@ -19,7 +21,13 @@ public class GenericMapper {
     }
 
     public <D, E> E toEntity(D dto, Class<E> entityClass) {
-        return modelMapper.map(dto, entityClass);
+        if (entityClass == null) {
+            throw new IllegalArgumentException("El parámetro entityClass no puede ser null. Verifica que lo estás pasando correctamente.");
+        }
+        log.info("DTO recibido: {}", dto);
+        E entity = modelMapper.map(dto, entityClass);
+        log.info("Entidad mapeada: {}", entity);
+        return entity;
     }
 
 

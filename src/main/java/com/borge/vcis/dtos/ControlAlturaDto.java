@@ -19,5 +19,5 @@ public class ControlAlturaDto implements Serializable {
     private final CitaDto cita;
     private final String alturaRegistrada;
     private final LocalDate fechaRegistro;
-    private final PesonalDto responsableMedicion;
+    private final PersonalDto responsableMedicion;
 }

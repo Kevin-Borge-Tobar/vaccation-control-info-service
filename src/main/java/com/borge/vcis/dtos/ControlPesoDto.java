@@ -18,5 +18,5 @@ public class ControlPesoDto implements Serializable {
     private final InformacionInfanteDto informacionInfante;
     private final String pesoRegistrado;
     private final LocalDate fechaRegistro;
-    private final PesonalDto responsableMedicion;
+    private final PersonalDto responsableMedicion;
 }

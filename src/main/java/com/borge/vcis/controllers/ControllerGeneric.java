@@ -6,7 +6,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
 public abstract class ControllerGeneric<D, T, ID> {
 
     protected final GenericService<D,T, ID> service;
