@@ -11,6 +11,7 @@ import lombok.Setter;
 public class Contacto {
     @Id
     @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "numero", length = 45)

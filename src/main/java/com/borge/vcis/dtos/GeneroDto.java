@@ -1,13 +1,15 @@
 package com.borge.vcis.dtos;
 
-import lombok.Value;
+import lombok.*;
 
 import java.io.Serializable;
 
 /**
  * DTO for {@link com.borge.vcis.entities.Genero}
  */
-@Value
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class GeneroDto implements Serializable {
     Integer id;
     String descripcion;

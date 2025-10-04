@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -13,6 +14,7 @@ import java.util.List;
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Table(name = "informacion_infante")
+@ToString
 public class InformacionInfante {
     @Id
     @Column(name = "id", nullable = false)
@@ -45,13 +47,12 @@ public class InformacionInfante {
     @JoinColumn(name = "genero_id", nullable = false)
     private Genero genero;
 
-    @OneToMany(mappedBy = "infante", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "informacionInfante", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Responsable> responsables;
 
-    @OneToMany(mappedBy = "infante", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "informacionInfante", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Contacto> contactos;
 
-    @OneToMany(mappedBy = "infante", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "informacionInfante", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Domicilio> domicilios;
-
 }

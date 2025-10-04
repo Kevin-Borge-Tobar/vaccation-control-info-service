@@ -25,3 +25,5 @@ public class CorsConfig {
         };
     }
 }
+
+//http://localhost:9081/swagger-ui/index.html#/

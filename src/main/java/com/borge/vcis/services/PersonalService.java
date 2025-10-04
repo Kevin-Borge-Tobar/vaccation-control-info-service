@@ -9,7 +9,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class PersonalService extends GenericServiceImpl<PersonalDto, Personal, Integer> {
 
-    public PersonalService(PesonalRepository repository, GenericMapper mapper) {
+    private final PesonalRepository repository;
+    private final GenericMapper mapper;
+    public PersonalService(PesonalRepository repository, GenericMapper mapper ) {
         super(repository, mapper, PersonalDto.class, Personal.class);
+        this.repository = repository;
+        this.mapper = mapper;
     }
 }

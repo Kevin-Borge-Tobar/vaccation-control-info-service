@@ -20,4 +20,8 @@ public interface CitaRepository extends JpaRepository<Cita, Integer> {
             @Param("cui") String cui,
             @Param("tipoId") Integer tipoId
     );
+    @Query("SELECT c FROM Cita c WHERE c.informacionInfante.cui = :cui AND c.status = 'PENDIENTE'")
+    List<Cita> findByCuiAndPendiente(
+            @Param("cui") String cui
+    );
 }

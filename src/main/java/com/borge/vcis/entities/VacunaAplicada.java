@@ -12,10 +12,10 @@ import java.time.LocalDate;
 public class VacunaAplicada {
 
     @Id
-    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    /** Catálogo (como ya lo tenías) */
+
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "Vacunas_id", nullable = false)
     private Vacuna vacunas;

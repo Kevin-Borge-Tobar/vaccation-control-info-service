@@ -9,7 +9,9 @@ import lombok.Setter;
 @Entity
 @Table(name = "cita_vacuna_aplicada")
 public class CitaVacunaAplicada {
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Integer id;
 
@@ -20,5 +22,4 @@ public class CitaVacunaAplicada {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "cita_id", nullable = false)
     private Cita cita;
-
 }

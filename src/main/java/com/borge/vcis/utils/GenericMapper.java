@@ -39,4 +39,14 @@ public class GenericMapper {
                 .map(entity -> modelMapper.map(entity, dtoClass))
                 .collect(Collectors.toList());
     }
+
+    public <T, D> List<T> toEntityList(List<D> dtoList, Class<T> entityClass) {
+        if (entityClass == null) {
+            throw new IllegalArgumentException("entityClass no puede ser null. Verifica que lo pasas en el constructor.");
+        }
+        return dtoList.stream()
+                .map(dto -> modelMapper.map(dto, entityClass))
+                .collect(java.util.stream.Collectors.toList());
+    }
+
 }

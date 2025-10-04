@@ -1,12 +1,10 @@
 package com.borge.vcis.controllers;
 
 import com.borge.vcis.dtos.InformacionInfanteDto;
+import com.borge.vcis.dtos.mapped.InformacionGeneralInfanteDto;
 import com.borge.vcis.entities.InformacionInfante;
 import com.borge.vcis.services.InformacionInfanteService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,4 +23,9 @@ public class InformacionInfanteController extends ControllerGeneric<InformacionI
     public List<InformacionInfanteDto> obtenerInfanteorCui(@PathVariable String cui) {
         return informacionInfanteService.obtenerInfantePorCui(cui);
     }
+
+    @PostMapping("/datos-generales")
+    public InformacionGeneralInfanteDto guardarDatosGenerales(@RequestBody InformacionGeneralInfanteDto infante) {
+        return informacionInfanteService.guardarDatosGenerales(infante);
+        }
 }

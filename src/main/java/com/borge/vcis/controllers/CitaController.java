@@ -3,6 +3,7 @@ package com.borge.vcis.controllers;
 import com.borge.vcis.dtos.CitaDto;
 import com.borge.vcis.entities.Cita;
 import com.borge.vcis.services.CitaService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@Slf4j
 @RestController
 @RequestMapping("/info-vacunacion/citas")
 public class CitaController  extends ControllerGeneric<CitaDto, Cita, Integer> {
@@ -40,12 +42,26 @@ public class CitaController  extends ControllerGeneric<CitaDto, Cita, Integer> {
             if (cita != null) {
                 return ResponseEntity.ok(cita);
             } else {
-                return ResponseEntity.notFound().build();
+                return null;
             }
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+            return null;
         }
+
     }
 
-
+    @GetMapping("/cui/{cui}/pendientes")
+    public List<CitaDto> obtenerCitasPorCuiYPendientes(@PathVariable String cui) {
+        try {
+            List<CitaDto> citas = citaService.obtenerCitasCUIAndPendiente(cui);
+            if (citas != null && !citas.isEmpty()) {
+                log.info("Tipo de cita:"+citas.get(0).getTipoCita().getDescripcion());
+                return citas;
+            } else {
+                return null;
+            }
+        } catch (Exception e) {
+            return null;
+        }
+    }
 }

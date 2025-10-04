@@ -1,9 +1,6 @@
 package com.borge.vcis.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,6 +9,7 @@ import lombok.Setter;
 @Entity
 @Table(name = "vacunas")
 public class Vacuna {
+
     @Id
     @Column(name = "id", nullable = false)
     private Integer id;
@@ -31,4 +29,7 @@ public class Vacuna {
     @Column(name = "intervalo_dosis", length = 45)
     private String intervaloDosis;
 
+    /** Nuevo: número total de dosis de la vacuna */
+    @Column(name = "total_dosis")
+    private Integer totalDosis;
 }

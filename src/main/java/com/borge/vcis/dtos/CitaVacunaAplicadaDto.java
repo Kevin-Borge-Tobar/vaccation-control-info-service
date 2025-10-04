@@ -1,5 +1,6 @@
 package com.borge.vcis.dtos;
 
+import com.borge.vcis.entities.VacunaAplicada;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
@@ -14,6 +15,6 @@ import java.io.Serializable;
 @ToString
 public class CitaVacunaAplicadaDto implements Serializable {
     private final Integer id;
-    private final VacunaAplicadaDto vacunaAplicada;
+    private final VacunaAplicada vacunaAplicada;
     private final CitaDto cita;
 }

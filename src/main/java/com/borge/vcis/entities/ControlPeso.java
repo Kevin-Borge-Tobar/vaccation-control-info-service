@@ -29,4 +29,7 @@ public class ControlPeso {
     @JoinColumn(name = "responsable_medicion", nullable = false)
     private Personal responsableMedicion;
 
+    @Column(name = "edad_meses", nullable = true)
+    private int edadMeses;
+
 }

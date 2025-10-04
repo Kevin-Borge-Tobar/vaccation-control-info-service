@@ -4,10 +4,7 @@ import com.borge.vcis.dtos.VacunaAplicadaDto;
 import com.borge.vcis.entities.VacunaAplicada;
 import com.borge.vcis.services.VacunaAplicadaService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -31,6 +28,16 @@ private final  VacunaAplicadaService vacunaAplicadaService;
             }
         } catch (Exception e) {
             return ResponseEntity.status(500).build();
+        }
+    }
+
+    @PostMapping("/guardar-todas/idCita/{idCita}")
+    public ResponseEntity<Void> guardarVacunasAplicadas( @PathVariable Integer idCita, @RequestBody List<VacunaAplicadaDto> vacunas ) {
+        try {
+            vacunaAplicadaService.guardarTodas(vacunas, idCita);
+            return ResponseEntity.ok().build();
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body(null);
         }
     }
 

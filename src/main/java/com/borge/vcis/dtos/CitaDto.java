@@ -20,7 +20,7 @@ public class CitaDto implements Serializable {
     private LocalDate fechaProximaConsulta;
     private String observaciones;
     private InformacionInfanteDto informacionInfante;
-    private TipoCitaDto tipoCitaDto;
+    private TipoCitaDto tipoCita;
     private String responsableRegistro;
     private String status;
     private String reprogramada;
